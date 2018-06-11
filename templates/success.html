@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1> Products Present in Database Items Table! </h1>      
+		<style>
+			table th {
+				background-color: #626568;
+				color: white;
+			}			
+			table td{
+				padding:5px;
+				text-align: center;					
+			}
+			table tr:nth-child(even) {
+				background-color: #edf5f9;				
+			}
+			table tr:nth-child(odd) {
+				background-color: #fcf9f4;				
+			}
+		</style>
+       <table style="width:100%">
+	   <tbody>
+		<tr> 
+				  <th> ID </th> 
+				  <th> Product Name </th>
+				  <th> Quantity </th>
+				  <th> Description </th>
+				  <th> Date Added </th>
+			  <tr>		
+		  {% for item in dbItems %}
+			  <tr> 
+				  <td> {{ item.id }} </td> 
+				  <td> {{ item.name }} </td>
+				  <td> {{ item.quantity }} </td>
+				  <td> {{ item.description }} </td>
+				  <td> {{ item.date_added }} </td>
+			  </tr>			
+		  {% endfor %}
+			
+			</tbody>
+		</table>
+    </body>
+</html>
